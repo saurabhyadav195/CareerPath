@@ -1,181 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CareerPath - Career Guidance Portal for students and job seekers">
     <title>CareerPath - Career Guidance Portal</title>
+
+    <!-- Bootstrap 3 CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <!-- ========== Header ========== -->
-    <header>
-        <img src="images/logo.png" alt="CareerPath Logo">
-        <h1>CareerPath</h1>
-        <p>Your Complete Career Guidance Portal</p>
-    </header>
+    <!-- ========== Bootstrap 3 Navbar ========== -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
 
-    <!-- ========== Navigation ========== -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="jobs.html">Job Listings</a></li>
-            <li><a href="resources.html">Career Resources</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#main-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="CareerPath Logo"
+                        style="height:30px; width:auto; display:inline-block; vertical-align:middle; margin-right:8px;">
+                    CareerPath
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Listings</a></li>
+                    <li><a href="resources.html">Career Resources</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+
+        </div>
     </nav>
 
     <!-- ========== Main Content ========== -->
     <main>
+        <div class="container">
 
-        <!-- Hero Banner -->
-        <section class="hero-banner">
-            <img src="images/banner.jpg" alt="Career Guidance Banner">
-            <h2>Find Your Dream Career Today</h2>
-            <p>Explore thousands of job opportunities, career resources, and expert guidance - all in one place.</p>
-        </section>
+            <!-- Hero Section -->
+            <section class="bs-section" id="hero-section">
+                <div class="row">
 
-        <!-- About CareerPath -->
-        <section id="about">
-            <h2>About CareerPath</h2>
-            <p>
-                CareerPath is an online career guidance portal designed to help students and fresh graduates
-                explore career options, find job listings, prepare for interviews, and build their professional profile.
-            </p>
-            <p>
-                We connect job seekers with top companies across various industries. Whether you are looking for
-                your first job or planning a career switch, CareerPath has all the tools and resources you need.
-            </p>
-            <p>
-                Our platform offers job listings, resume writing tips, career resources, interview preparation
-                videos, and more - completely free for all registered users.
-            </p>
-        </section>
+                    <div class="col-xs-12 col-sm-5 col-md-5">
+                        <img src="images/banner.jpg" alt="Career Guidance Banner"
+                            class="img-responsive hero-banner-img">
+                    </div>
 
-        <!-- Why Choose CareerPath -->
-        <section id="why-choose">
-            <h2>Why Choose CareerPath?</h2>
+                    <div class="col-xs-12 col-sm-7 col-md-7">
+                        <div class="hero-text-bs">
+                            <h2>Find Your Dream Career</h2>
+                            <p>Find jobs, improve your skills, and prepare for your career.</p>
+                            <div class="hero-btn-group">
+                                <a href="jobs.html" class="btn btn-danger" id="btn-browse-jobs">Browse Jobs</a>
+                                <a href="register.html" class="btn btn-default" id="btn-register-free">Register</a>
+                            </div>
+                        </div>
+                    </div>
 
-            <article>
-                <h3>&#128188; Thousands of Job Listings</h3>
-                <p>
-                    Browse through a wide range of job openings from top companies across IT, Finance,
-                    Healthcare, Education, and many more sectors.
-                </p>
-            </article>
+                </div>
+            </section>
 
-            <article>
-                <h3>&#127891; Designed for Students</h3>
-                <p>
-                    CareerPath is specifically designed keeping freshers and students in mind. We provide
-                    entry-level job listings and career guidance tailored for beginners.
-                </p>
-            </article>
+            <!-- About Section -->
+            <section class="bs-section" id="about">
+                <h2>About CareerPath</h2>
+                <p>CareerPath helps students explore job opportunities and career resources.</p>
+            </section>
 
-            <article>
-                <h3>&#128196; Free Resume Building Tips</h3>
-                <p>
-                    Access expert resume writing tips and sample resumes to help you create a professional
-                    resume that stands out to recruiters.
-                </p>
-            </article>
+            <!-- Career Categories -->
+            <section class="bs-section" id="categories">
+                <h2>Career Categories</h2>
 
-            <article>
-                <h3>&#127897; Interview Preparation</h3>
-                <p>
-                    Watch interview preparation videos from industry experts to get ready for your next
-                    job interview with confidence.
-                </p>
-            </article>
+                <div class="row" style="margin-top:12px;">
 
-        </section>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="panel panel-default category-panel">
+                            <div class="panel-body text-center">
+                                <div class="category-icon">💻</div>
+                                <h3>Software Development</h3>
+                                <p>Build software applications and systems.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Featured Career Categories -->
-        <section id="categories">
-            <h2>Featured Career Categories</h2>
-            <p>Explore jobs in the following popular career fields:</p>
-            <ul class="categories-list">
-                <li>&#128187; Information Technology (IT)</li>
-                <li>&#128200; Finance and Banking</li>
-                <li>&#127973; Education and Teaching</li>
-                <li>&#127973; Healthcare and Medical</li>
-                <li>&#128268; Engineering and Manufacturing</li>
-                <li>&#128084; Sales and Marketing</li>
-                <li>&#127979; Design and Media</li>
-                <li>&#128100; Human Resources</li>
-            </ul>
-        </section>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="panel panel-default category-panel">
+                            <div class="panel-body text-center">
+                                <div class="category-icon">📊</div>
+                                <h3>Data Science</h3>
+                                <p>Analyze data and build predictive models.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Career Statistics -->
-        <section id="statistics">
-            <h2>Career Statistics</h2>
-            <p>Here is a quick overview of our portal statistics:</p>
-            <table class="stats-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Count</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Total Jobs Listed</td>
-                        <td>5,200+</td>
-                        <td>Updated daily</td>
-                    </tr>
-                    <tr>
-                        <td>Registered Users</td>
-                        <td>18,500+</td>
-                        <td>Students and professionals</td>
-                    </tr>
-                    <tr>
-                        <td>Partner Companies</td>
-                        <td>320+</td>
-                        <td>Across India</td>
-                    </tr>
-                    <tr>
-                        <td>Successful Placements</td>
-                        <td>9,800+</td>
-                        <td>Since 2020</td>
-                    </tr>
-                    <tr>
-                        <td>Career Resources</td>
-                        <td>150+</td>
-                        <td>Articles, videos, and guides</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="panel panel-default category-panel">
+                            <div class="panel-body text-center">
+                                <div class="category-icon">🔒</div>
+                                <h3>Cyber Security</h3>
+                                <p>Protect systems and networks from threats.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Quick Tips (Aside) -->
-        <aside>
-            <h3>&#128161; Quick Career Tips</h3>
-            <ul>
-                <li>Always customize your resume for each job application.</li>
-                <li>Practice common interview questions before your interview.</li>
-                <li>Build your LinkedIn profile and connect with professionals.</li>
-                <li>Improve your communication skills - both written and verbal.</li>
-                <li>Learn at least one in-demand skill like Python, Excel, or Digital Marketing.</li>
-                <li>Never stop learning - take online courses and certifications.</li>
-                <li>Apply to multiple companies at the same time to increase your chances.</li>
-            </ul>
-        </aside>
+                </div>
+            </section>
 
+        </div>
     </main>
 
     <!-- ========== Footer ========== -->
-    <footer>
-        <p>&copy; 2024 CareerPath - Career Guidance Portal. All Rights Reserved.</p>
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="jobs.html">Job Listings</a> |
-            <a href="resources.html">Career Resources</a> |
-            <a href="register.html">Register</a>
-        </p>
-        <p>Contact us: info@careerpath.com | Phone: +91-9876543210</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p><strong>CareerPath</strong> &mdash; Career Guidance Portal</p>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="jobs.html">Job Listings</a>
+                        <a href="resources.html">Career Resources</a>
+                        <a href="register.html">Register</a>
+                    </div>
+                    <p>&copy; 2024 CareerPath. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- jQuery (required by Bootstrap 3) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 JS CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

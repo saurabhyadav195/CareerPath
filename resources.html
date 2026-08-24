@@ -3,148 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CareerPath - Career Resources including gallery, interview videos, and career audio">
+    <meta name="description" content="CareerPath - Career Resources including gallery, videos and audio">
     <title>Career Resources - CareerPath</title>
+
+    <!-- Bootstrap 3 CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- ========== Header ========== -->
-    <header>
-        <img src="images/logo.png" alt="CareerPath Logo">
-        <h1>CareerPath</h1>
-        <p>Your Complete Career Guidance Portal</p>
-    </header>
+    <!-- ========== Bootstrap 3 Navbar ========== -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
 
-    <!-- ========== Navigation ========== -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Job Listings</a></li>
-            <li><a href="resources.html" class="active">Career Resources</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#main-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="CareerPath Logo"
+                        style="height:30px; width:auto; display:inline-block; vertical-align:middle; margin-right:8px;">
+                    CareerPath
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Listings</a></li>
+                    <li class="active"><a href="resources.html">Career Resources</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+
+        </div>
     </nav>
 
     <!-- ========== Main Content ========== -->
     <main>
+        <div class="container">
 
-        <!-- Career Guidance Gallery -->
-        <section id="gallery">
-            <h2>Career Guidance Gallery</h2>
-            <p>
-                Explore images from our career events, workshops, and campus placements.
-            </p>
+            <!-- Gallery -->
+            <section class="bs-section" id="gallery">
+                <h2>Career Gallery</h2>
 
-            <div class="gallery">
-                <ul class="gallery-grid">
-                    <li>
-                        <img src="images/career1.jpg" alt="Career Workshop - Group Discussion Session">
-                        <p>Group Discussion Session</p>
-                    </li>
-                    <li>
-                        <img src="images/career2.jpg" alt="Campus Placement Drive 2024">
-                        <p>Campus Placement Drive</p>
-                    </li>
-                    <li>
-                        <img src="images/career3.jpg" alt="Resume Writing Workshop">
-                        <p>Resume Writing Workshop</p>
-                    </li>
-                    <li>
-                        <img src="images/career4.jpg" alt="Interview Preparation Training">
-                        <p>Interview Preparation Training</p>
-                    </li>
-                    <li>
-                        <img src="images/career5.jpg" alt="Career Counselling Session">
-                        <p>Career Counselling Session</p>
-                    </li>
-                    <li>
-                        <img src="images/career6.jpg" alt="Job Fair and Networking Event">
-                        <p>Job Fair and Networking Event</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+                <div class="row" style="margin-top:12px;">
 
-        <!-- Interview Preparation Video -->
-        <section id="interview-video">
-            <h2>Interview Preparation Resources</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="gallery-item">
+                            <img src="images/career1.jpg" alt="Group Discussion" class="img-responsive">
+                            <p>Group Discussion</p>
+                        </div>
+                    </div>
 
-            <div class="media-item">
-                <h3>&#127909; Interview Tips - Video Guide</h3>
-                <p>
-                    Watch this video to learn how to crack interviews at top companies.
-                    Covers common interview questions, body language, and communication tips.
-                </p>
-                <video controls>
-                    <source src="video/interview-tips.mp4" type="video/mp4">
-                    Your browser does not support the video tag. Please upgrade your browser.
-                </video>
-            </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="gallery-item">
+                            <img src="images/career2.jpg" alt="Campus Placement" class="img-responsive">
+                            <p>Campus Placement</p>
+                        </div>
+                    </div>
 
-        </section>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="gallery-item">
+                            <img src="images/career3.jpg" alt="Resume Workshop" class="img-responsive">
+                            <p>Resume Workshop</p>
+                        </div>
+                    </div>
 
-        <!-- Career Motivation Audio -->
-        <section id="audio-resources">
-            <h2>Career Motivation</h2>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="gallery-item">
+                            <img src="images/career4.jpg" alt="Interview Preparation" class="img-responsive">
+                            <p>Interview Preparation</p>
+                        </div>
+                    </div>
 
-            <div class="media-item">
-                <h3>&#127911; Career Motivation Audio</h3>
-                <p>
-                    Listen to this motivational audio to boost your confidence before applying for jobs
-                    or attending interviews. Great to listen to before your big interview day!
-                </p>
-                <audio controls>
-                    <source src="audio/motivation.mp3" type="audio/mpeg">
-                    Your browser does not support the audio tag. Please upgrade your browser.
-                </audio>
-            </div>
+                </div>
+            </section>
 
-        </section>
+            <!-- Videos -->
+            <section class="bs-section" id="interview-video">
+                <h2>Video Resources</h2>
 
-        <!-- Resume Writing Video -->
-        <section id="resume-video">
-            <h2>Resume Writing Guide</h2>
+                <div class="row">
 
-            <div class="media-item">
-                <h3>&#127909; Resume Writing - Step by Step Video</h3>
-                <p>
-                    Learn how to write a professional resume from scratch. This video covers formatting,
-                    what to include, what to avoid, and how to tailor your resume for different jobs.
-                </p>
-                <video controls>
-                    <source src="video/resume-guide.mp4" type="video/mp4">
-                    Your browser does not support the video tag. Please upgrade your browser.
-                </video>
-            </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="media-item">
+                            <h3>&#127909; Interview Tips</h3>
+                            <video controls poster="images/interview.jpg"
+                                style="width:100%; margin-top:8px;">
+                                <source src="video/interview-tips.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
 
-        </section>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="media-item">
+                            <h3>&#127909; Resume Guide</h3>
+                            <video controls style="width:100%; margin-top:8px;">
+                                <source src="video/resume-guide.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
 
-        <!-- Aside - Useful Links -->
-        <aside>
-            <h3>&#128279; Useful Career Links</h3>
-            <ul>
-                <li><a href="jobs.html">Browse Job Listings</a></li>
-                <li><a href="register.html">Submit Your Resume</a></li>
-                <li>National Career Service Portal - <a href="https://www.ncs.gov.in" target="_blank">www.ncs.gov.in</a></li>
-                <li>LinkedIn for Students - <a href="https://www.linkedin.com" target="_blank">www.linkedin.com</a></li>
-                <li>Naukri.com Jobs - <a href="https://www.naukri.com" target="_blank">www.naukri.com</a></li>
-            </ul>
-        </aside>
+                </div>
+            </section>
 
+            <!-- Audio -->
+            <section class="bs-section" id="audio-resources">
+                <h2>Motivation Audio</h2>
+                <div class="media-item">
+                    <h3>&#127911; Career Motivation</h3>
+                    <audio controls style="width:100%; max-width:480px; margin-top:8px;">
+                        <source src="audio/motivation.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+            </section>
+
+        </div>
     </main>
 
     <!-- ========== Footer ========== -->
-    <footer>
-        <p>&copy; 2024 CareerPath - Career Guidance Portal. All Rights Reserved.</p>
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="jobs.html">Job Listings</a> |
-            <a href="resources.html">Career Resources</a> |
-            <a href="register.html">Register</a>
-        </p>
-        <p>Contact us: info@careerpath.com | Phone: +91-9876543210</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p><strong>CareerPath</strong> &mdash; Career Guidance Portal</p>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="jobs.html">Job Listings</a>
+                        <a href="resources.html">Career Resources</a>
+                        <a href="register.html">Register</a>
+                    </div>
+                    <p>&copy; 2024 CareerPath. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- jQuery (required by Bootstrap 3) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 JS CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

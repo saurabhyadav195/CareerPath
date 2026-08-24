@@ -1,107 +1,75 @@
-/* ============================================
-   CareerPath - Career Guidance Portal
-   External Stylesheet - css/style.css
-   Experiment No. 2 - Web Design Lab
-   ============================================ */
-
-/* ---- General Reset ---- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== RESET & BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: Arial, sans-serif;
     font-size: 15px;
-    color: #222222;
+    color: #222;
     background-color: #f5f5f5;
+    line-height: 1.6;
 }
 
-/* ---- Links ---- */
-a {
-    color: #003399;
-    text-decoration: none;
-}
+a { color: #039; text-decoration: none; }
+a:hover { text-decoration: underline; color: #c00; }
 
-a:hover {
-    text-decoration: underline;
-    color: #cc0000;
-}
+img { max-width: 100%; height: auto; display: block; }
 
-/* ---- Header ---- */
+/* ===== HEADER ===== */
 header {
     background-color: #003399;
-    color: #ffffff;
+    color: #fff;
     padding: 15px 20px;
-    text-align: center;
 }
 
-header img {
-    height: 60px;
-    vertical-align: middle;
-    margin-right: 10px;
+.header-inner,
+.nav-list,
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-header h1 {
-    display: inline;
-    font-size: 28px;
-    vertical-align: middle;
-}
+.header-brand img { height: 60px; width: auto; flex-shrink: 0; }
 
-header p {
-    font-size: 14px;
-    margin-top: 5px;
-    color: #ccddff;
-}
+.header-text h1 { font-size: 26px; color: #fff; margin-bottom: 3px; }
+.header-text p { font-size: 13px; color: #cce0ff; }
 
-/* ---- Navigation ---- */
-nav {
-    background-color: #222222;
-    overflow: hidden;
-}
+/* ===== NAVIGATION ===== */
+nav { background-color: #222; }
 
-nav ul {
+.nav-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
+.nav-list li a {
     display: block;
     padding: 12px 20px;
-    color: #ffffff;
-    text-decoration: none;
+    color: #fff;
     font-size: 14px;
-}
-
-nav ul li a:hover {
-    background-color: #003399;
     text-decoration: none;
 }
 
-nav ul li a.active {
-    background-color: #cc0000;
-}
+.nav-list li a:hover { background-color: #003399; }
+.nav-list li a.active { background-color: #cc0000; }
 
-/* ---- Main Content ---- */
+/* ===== MAIN & SECTIONS ===== */
 main {
     padding: 20px;
     max-width: 1100px;
     margin: 0 auto;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
 }
 
-/* ---- Sections ---- */
 section {
     margin-bottom: 25px;
     padding: 15px;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     background-color: #fafafa;
 }
 
@@ -113,135 +81,161 @@ section h2 {
     margin-bottom: 12px;
 }
 
-section h3 {
-    font-size: 16px;
-    color: #333333;
-    margin-bottom: 8px;
-}
+section h3 { font-size: 16px; color: #333; margin-bottom: 8px; }
+section p { line-height: 1.7; margin-bottom: 8px; }
 
-section p {
-    line-height: 1.7;
-    margin-bottom: 8px;
-}
-
-/* ---- Hero Banner ---- */
-.hero-banner {
+/* ===== HERO ===== */
+.hero-section {
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    border: none;
     background-color: #003399;
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
+    color: #fff;
     margin-bottom: 20px;
 }
 
-.hero-banner img {
+.hero-image { flex: 1 1 50%; }
+
+.hero-image img {
     width: 100%;
-    max-height: 250px;
+    height: 100%;
+    min-height: 200px;
     object-fit: cover;
-    display: block;
-    margin: 0 auto 15px auto;
 }
 
-.hero-banner h2 {
-    font-size: 26px;
-    color: #ffffff;
+.hero-text {
+    flex: 1 1 50%;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hero-text h2 {
+    font-size: 22px;
+    color: #fff;
     border: none;
-    margin-bottom: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
-.hero-banner p {
-    font-size: 15px;
-    color: #ccddff;
-}
+.hero-text p { color: #cce0ff; font-size: 14px; margin-bottom: 0; }
 
-/* ---- Article ---- */
-article {
-    padding: 12px;
-    border-left: 4px solid #003399;
-    margin-bottom: 15px;
-    background-color: #eef2ff;
-}
-
-article h3 {
-    color: #003399;
-    margin-bottom: 5px;
-}
-
-/* ---- Aside ---- */
-aside {
-    background-color: #fffbee;
-    border: 1px solid #ccaa00;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-aside h3 {
-    color: #cc7700;
-    font-size: 17px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccaa00;
-    padding-bottom: 5px;
-}
-
-aside ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-aside ul li {
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-/* ---- Career Categories List ---- */
-.categories-list {
-    list-style: none;
-    padding: 0;
-}
-
-.categories-list li {
-    padding: 8px 10px;
-    border-bottom: 1px solid #dddddd;
-    background-color: #eef2ff;
-    margin-bottom: 4px;
-}
-
-.categories-list li:hover {
-    background-color: #d0d8f0;
-}
-
-/* ---- Statistics Table (Career Stats) ---- */
-.stats-table {
-    width: 100%;
-    border-collapse: collapse;
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 10px;
 }
 
-.stats-table th,
-.stats-table td {
-    border: 1px solid #aaaaaa;
-    padding: 8px 12px;
-    text-align: left;
+/* Shared button base */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 9px 20px;
+    font-size: 14px;
+    border: none;
+    text-decoration: none;
 }
 
-.stats-table th {
+.btn-primary { background-color: #cc0000; color: #fff; }
+.btn-primary:hover { background-color: #990000; color: #fff; text-decoration: none; }
+
+.btn-secondary { background-color: transparent; color: #fff; border: 2px solid #fff; }
+.btn-secondary:hover { background-color: #fff; color: #003399; text-decoration: none; }
+
+/* ===== ABOUT ===== */
+#about,
+#why-choose { background-color: #f5f8ff; }
+
+/* ===== CAREER CATEGORIES — Grid ===== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.category-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 18px 15px;
+    text-align: center;
+}
+
+.category-card:hover { border-color: #003399; background-color: #f0f4ff; }
+.category-icon { font-size: 30px; margin-bottom: 10px; }
+.category-card h3 { font-size: 15px; color: #003399; margin-bottom: 8px; }
+.category-card p { font-size: 13px; color: #555; margin-bottom: 0; }
+
+/* ===== WHY CHOOSE — Flexbox ===== */
+.features-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.feature-item {
+    flex: 1 1 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+}
+
+.feature-item:hover { border-color: #003399; }
+.feature-icon { font-size: 28px; margin-bottom: 8px; }
+.feature-item h3 { font-size: 14px; color: #003399; margin-bottom: 6px; }
+.feature-item p { font-size: 13px; color: #555; margin-bottom: 0; }
+
+/* ===== STATISTICS — Grid ===== */
+#statistics {
     background-color: #003399;
-    color: #ffffff;
+    color: #fff;
+    border-color: #003399;
 }
 
-.stats-table tr:nth-child(even) {
-    background-color: #eef2ff;
+#statistics h2 { color: #fff; border-bottom-color: #fff; }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
 }
 
-/* ---- Jobs Table ---- */
+.stat-box {
+    background-color: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.3);
+    padding: 18px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.stat-number { font-size: 26px; font-weight: bold; color: #fff; }
+.stat-label { font-size: 13px; color: #cce0ff; }
+
+/* ===== JOBS TABLE ===== */
+#job-listings { background-color: #fafafa; }
+
+.table-scroll { width: 100%; overflow-x: auto; }
+
 .jobs-table {
     width: 100%;
+    min-width: 650px;
     border-collapse: collapse;
     margin-top: 15px;
     font-size: 14px;
 }
 
 .jobs-table caption {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #003399;
     margin-bottom: 10px;
@@ -253,96 +247,486 @@ aside ul li {
 
 .jobs-table th,
 .jobs-table td {
-    border: 1px solid #aaaaaa;
+    border: 1px solid #aaa;
     padding: 9px 10px;
     text-align: left;
     vertical-align: top;
 }
 
-.jobs-table thead th {
-    background-color: #003399;
-    color: #ffffff;
-}
+.jobs-table thead th { background-color: #003399; color: #fff; }
+.jobs-table tbody tr:nth-child(even) { background-color: #f0f4ff; }
+.jobs-table tbody tr:hover { background-color: #dde5ff; }
 
-.jobs-table tbody tr:nth-child(even) {
-    background-color: #f0f4ff;
-}
-
-.jobs-table tbody tr:hover {
-    background-color: #dde5ff;
-}
-
-/* ---- Gallery ---- */
-.gallery {
-    display: block;
-}
+/* ===== GALLERY — Grid ===== */
+#gallery { background-color: #fafafa; }
 
 .gallery-grid {
-    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.gallery-item {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.gallery-item p { font-size: 12px; color: #555; margin: 5px 0 3px; }
+
+/* ===== MEDIA ===== */
+.media-item {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.media-item h3 { color: #003399; margin-bottom: 8px; }
+
+.media-item video,
+.media-item audio {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.media-item video { max-width: 640px; }
+.media-item audio { max-width: 500px; }
+
+/* ===== REGISTRATION FORM — Grid ===== */
+#registration { background-color: #fafafa; }
+.reg-form { background-color: #fafafa; padding: 10px; }
+
+fieldset {
+    border: 1px solid #aaa;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f5f8ff;
+}
+
+legend { font-size: 16px; font-weight: bold; color: #003399; padding: 0 8px; }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group-full { grid-column: 1 / -1; }
+
+.form-group label { font-weight: bold; color: #333; font-size: 14px; }
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group textarea { resize: vertical; }
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.radio-group input[type="radio"] { width: auto; }
+.radio-group label { font-weight: normal; display: inline; margin-right: 10px; }
+
+.form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.form-buttons input[type="submit"],
+.form-buttons input[type="reset"] {
+    padding: 9px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+.form-buttons input[type="submit"] { background-color: #003399; }
+.form-buttons input[type="submit"]:hover { background-color: #0044cc; }
+.form-buttons input[type="reset"] { background-color: #888; }
+.form-buttons input[type="reset"]:hover { background-color: #666; }
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 15px 20px;
+    font-size: 13px;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.footer-links a { color: #aabbff; text-decoration: none; padding: 2px 8px; }
+.footer-links a:hover { color: #fff; text-decoration: underline; }
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .hero-section { flex-direction: column; }
+    .hero-image { flex: none; }
+    .hero-image img { height: 200px; min-height: unset; }
+    .hero-text { padding: 20px 15px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .header-brand { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .header-brand img { height: 45px; }
+    .header-text h1 { font-size: 20px; }
+    .nav-list { flex-direction: column; }
+    .nav-list li a { padding: 10px 15px; border-bottom: 1px solid #333; }
+    main { padding: 12px; }
+    .hero-text { padding: 15px 12px; }
+    .hero-text h2 { font-size: 18px; }
+    .category-grid,
+    .gallery-grid { grid-template-columns: 1fr; }
+    .features-flex { flex-direction: column; }
+    .feature-item { flex: none; width: 100%; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-number { font-size: 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group-full { grid-column: 1; }
+    .form-buttons { flex-direction: column; align-items: flex-start; }
+    .form-buttons input[type="submit"],
+    .form-buttons input[type="reset"] { width: 100%; }
+    .media-item video,
+    .media-item audio { max-width: 100%; }
+    .footer-links { flex-direction: column; align-items: center; gap: 3px; }
+}
+
+@media (max-width: 400px) {
+    body { font-size: 14px; }
+    section h2 { font-size: 17px; }
+    .hero-text h2 { font-size: 16px; }
+    .hero-links { flex-direction: column; }
+    .btn-primary,
+    .btn-secondary { width: 100%; text-align: center; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+
+/* ===================================================
+   EXPERIMENT 4 — Bootstrap 3 Integration Styles
+   These styles integrate Bootstrap 3 classes with
+   the existing CareerPath color scheme from Exp 3.
+   =================================================== */
+
+/* ---- Bootstrap 3 Navbar Override ---- */
+.navbar-default {
+    background-color: #003399;
+    border-color: #002277;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #cce0ff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #cce0ff;
+    font-size: 14px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: #002277;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #cc0000;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #cce0ff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #cce0ff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #002277;
+}
+
+/* ---- Bootstrap 3 Section Wrapper ---- */
+/* Used inside .container to replicate Exp 3 section style */
+.bs-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+}
+
+.bs-section h2 {
+    font-size: 20px;
+    color: #003399;
+    border-bottom: 2px solid #003399;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+/* ---- Bootstrap 3 Main Container ---- */
+main > .container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* ---- Hero Section (Bootstrap 3 version) ---- */
+#hero-section {
+    background-color: #003399;
+    color: #fff;
+    border-color: #003399;
     padding: 0;
 }
 
-.gallery-grid li {
-    display: inline-block;
-    margin: 8px;
-    border: 2px solid #aaaaaa;
-    padding: 5px;
-    background-color: #ffffff;
-    vertical-align: top;
+.hero-banner-img {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
 }
 
-.gallery-grid li img {
-    width: 270px;
+.hero-text-bs {
+    padding: 25px 15px;
+    color: #fff;
+}
+
+.hero-text-bs h2 {
+    font-size: 22px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.hero-text-bs p {
+    color: #cce0ff;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.hero-btn-group {
+    margin-top: 15px;
+}
+
+.hero-btn-group .btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* ---- Career Category Panels (Bootstrap 3) ---- */
+.category-panel {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.category-panel .panel-body {
+    padding: 18px 12px;
+}
+
+.category-panel:hover {
+    border-color: #003399;
+    background-color: #f0f4ff;
+}
+
+.category-panel .category-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.category-panel h3 {
+    font-size: 15px;
+    color: #003399;
+    margin-bottom: 8px;
+}
+
+.category-panel p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* ---- Feature Panels (Why Choose) ---- */
+.feature-panel {
+    margin-bottom: 15px;
+}
+
+.feature-panel .feature-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.feature-panel h3 {
+    font-size: 14px;
+    color: #003399;
+    margin-bottom: 6px;
+}
+
+.feature-panel p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* ---- Statistics Section (Bootstrap 3) ---- */
+.stat-section {
+    background-color: #003399 !important;
+    color: #fff !important;
+    border-color: #003399 !important;
+}
+
+.stat-section h2 {
+    color: #fff !important;
+    border-bottom-color: #fff !important;
+}
+
+.stat-box {
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 18px 10px;
+    margin-bottom: 15px;
+}
+
+.stat-box .stat-number {
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.stat-box .stat-label {
+    display: block;
+    font-size: 13px;
+    color: #cce0ff;
+    margin-top: 4px;
+}
+
+/* ---- Jobs Table (Bootstrap 3 override) ---- */
+.jobs-table-bs caption {
+    font-size: 17px;
+    font-weight: bold;
+    color: #003399;
+    text-align: left;
+    padding: 5px;
+    border-bottom: 2px solid #003399;
+    caption-side: top;
+}
+
+.jobs-table-bs thead th {
+    background-color: #003399;
+    color: #fff;
+}
+
+/* ---- Gallery Items (Bootstrap 3) ---- */
+.gallery-item {
+    border: 2px solid #ccc;
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
     height: 180px;
     object-fit: cover;
     display: block;
 }
 
-.gallery-grid li p {
-    text-align: center;
+.gallery-item p {
     font-size: 12px;
-    color: #555555;
-    margin-top: 4px;
+    color: #555;
+    margin: 5px 0 3px;
 }
 
-/* ---- Media (Video / Audio) ---- */
-.media-item {
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #cccccc;
-    background-color: #f9f9f9;
+/* ---- Bootstrap 3 Footer ---- */
+.site-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 15px 20px;
+    font-size: 13px;
+    margin-top: 0;
 }
 
-.media-item h3 {
-    color: #003399;
-    margin-bottom: 8px;
+.site-footer .footer-links {
+    margin: 8px 0;
 }
 
-.media-item video,
-.media-item audio {
-    display: block;
-    margin-top: 8px;
+.site-footer .footer-links a {
+    color: #aabbff;
+    text-decoration: none;
+    padding: 2px 8px;
+    display: inline-block;
 }
 
-.media-item video {
-    width: 100%;
-    max-width: 640px;
+.site-footer .footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
-.media-item audio {
-    width: 100%;
-    max-width: 400px;
+.site-footer p {
+    margin-bottom: 4px;
+    color: #ccc;
 }
 
-/* ---- Form Styles ---- */
-form {
-    background-color: #fafafa;
-    padding: 15px;
-    border: 1px solid #cccccc;
-}
-
+/* ---- Bootstrap 3 Form Overrides ---- */
 fieldset {
-    border: 1px solid #aaaaaa;
+    border: 1px solid #aaa;
     padding: 15px;
     margin-bottom: 20px;
     background-color: #f5f8ff;
@@ -353,98 +737,13 @@ legend {
     font-weight: bold;
     color: #003399;
     padding: 0 8px;
-}
-
-.form-group {
-    margin-bottom: 14px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 4px;
-    color: #333333;
-    font-size: 14px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    max-width: 450px;
-    padding: 7px 10px;
-    border: 1px solid #aaaaaa;
-    background-color: #ffffff;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-}
-
-.form-group textarea {
-    height: 90px;
-    resize: vertical;
-}
-
-.form-group input[type="radio"],
-.form-group input[type="checkbox"] {
     width: auto;
-    margin-right: 5px;
-}
-
-.form-group .radio-group label,
-.form-group .checkbox-label {
-    font-weight: normal;
-    display: inline;
-}
-
-.form-buttons {
-    margin-top: 15px;
-}
-
-.form-buttons input[type="submit"],
-.form-buttons input[type="reset"] {
-    padding: 9px 25px;
-    font-size: 14px;
-    margin-right: 10px;
-    cursor: pointer;
     border: none;
-    color: #ffffff;
+    margin-bottom: 12px;
 }
 
-.form-buttons input[type="submit"] {
-    background-color: #003399;
-}
-
-.form-buttons input[type="submit"]:hover {
-    background-color: #0044cc;
-}
-
-.form-buttons input[type="reset"] {
-    background-color: #888888;
-}
-
-.form-buttons input[type="reset"]:hover {
-    background-color: #666666;
-}
-
-/* ---- Footer ---- */
-footer {
-    background-color: #222222;
-    color: #cccccc;
-    text-align: center;
-    padding: 15px 20px;
-    margin-top: 20px;
-    font-size: 13px;
-}
-
-footer a {
-    color: #aabbff;
-}
-
-footer a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-footer p {
-    margin-bottom: 5px;
+/* ---- About + Why Choose Background ---- */
+#about,
+#why-choose {
+    background-color: #f5f8ff !important;
 }

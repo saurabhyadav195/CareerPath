@@ -3,231 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CareerPath - Student Registration and Resume Submission Form">
+    <meta name="description" content="CareerPath - Student Registration Form">
     <title>Register - CareerPath</title>
+
+    <!-- Bootstrap 3 CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- ========== Header ========== -->
-    <header>
-        <img src="images/logo.png" alt="CareerPath Logo">
-        <h1>CareerPath</h1>
-        <p>Your Complete Career Guidance Portal</p>
-    </header>
+    <!-- ========== Bootstrap 3 Navbar ========== -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
 
-    <!-- ========== Navigation ========== -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Job Listings</a></li>
-            <li><a href="resources.html">Career Resources</a></li>
-            <li><a href="register.html" class="active">Register</a></li>
-        </ul>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#main-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="CareerPath Logo"
+                        style="height:30px; width:auto; display:inline-block; vertical-align:middle; margin-right:8px;">
+                    CareerPath
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Listings</a></li>
+                    <li><a href="resources.html">Career Resources</a></li>
+                    <li class="active"><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+
+        </div>
     </nav>
 
     <!-- ========== Main Content ========== -->
     <main>
+        <div class="container">
 
-        <!-- Registration Section -->
-        <section id="registration">
-            <h2>Student Registration &amp; Resume Submission</h2>
-            <p>
-                Fill in the form below to register on CareerPath and submit your resume.
-                Fields marked with <strong>*</strong> are required.
-            </p>
+            <section class="bs-section" id="registration">
+                <h2>Student Registration</h2>
+                <p>Fields marked with <strong>*</strong> are required.</p>
 
-            <!-- Registration Form -->
-            <form action="#" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" id="reg-form">
 
-                <!-- Fieldset 1: Personal Information -->
-                <fieldset>
-                    <legend>Personal Information</legend>
+                    <fieldset>
+                        <legend>Registration Form</legend>
 
-                    <!-- Full Name -->
-                    <div class="form-group">
-                        <label for="fullname">Full Name *</label>
-                        <input type="text" id="fullname" name="fullname"
-                               placeholder="Enter your full name" required>
-                    </div>
+                        <!-- Row 1: Full Name + Email -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="fullname">Full Name *</label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname"
+                                        placeholder="Enter full name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="email">Email *</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Enter email address" required>
+                                </div>
+                            </div>
+                        </div>
 
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email"
-                               placeholder="Enter your email address" required>
-                    </div>
+                        <!-- Row 2: Phone + Qualification -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="phone">Phone *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        placeholder="10-digit mobile number"
+                                        pattern="[0-9]{10}" maxlength="10" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="qualification">Qualification *</label>
+                                    <select class="form-control" id="qualification" name="qualification" required>
+                                        <option value="">-- Select --</option>
+                                        <option value="ssc">SSC (10th)</option>
+                                        <option value="hsc">HSC (12th)</option>
+                                        <option value="diploma">Diploma</option>
+                                        <option value="ug">Under Graduate (B.E./B.Tech/B.Sc.)</option>
+                                        <option value="pg">Post Graduate (M.E./M.Tech/MBA)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-                    <!-- Phone Number -->
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone"
-                               placeholder="Enter 10-digit mobile number" required>
-                    </div>
+                        <!-- Row 3: Skills + Preferred Job Role -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="skills">Skills</label>
+                                    <input type="text" class="form-control" id="skills" name="skills"
+                                        placeholder="e.g. HTML, CSS, Java">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="jobrole">Preferred Job Role</label>
+                                    <input type="text" class="form-control" id="jobrole" name="jobrole"
+                                        placeholder="e.g. Software Developer">
+                                </div>
+                            </div>
+                        </div>
 
-                    <!-- Date of Birth -->
-                    <div class="form-group">
-                        <label for="dob">Date of Birth *</label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
+                        <!-- Row 4: Resume Upload -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="resume">Upload Resume</label>
+                                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                                </div>
+                            </div>
+                        </div>
 
-                    <!-- Gender -->
-                    <div class="form-group">
-                        <label>Gender *</label>
-                        <div class="radio-group">
-                            <input type="radio" id="male" name="gender" value="male" required>
-                            <label for="male">Male</label>
-                            &nbsp;&nbsp;
-                            <input type="radio" id="female" name="gender" value="female">
-                            <label for="female">Female</label>
-                            &nbsp;&nbsp;
-                            <input type="radio" id="other" name="gender" value="other">
-                            <label for="other">Other</label>
+                        <!-- Row 5: Message (full width) -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="control-label" for="message">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="3"
+                                        placeholder="Write a short message..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <!-- Buttons -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
+                            <button type="reset" class="btn btn-default" id="btn-reset"
+                                style="margin-left:10px;">Reset</button>
                         </div>
                     </div>
 
-                    <!-- City -->
-                    <div class="form-group">
-                        <label for="city">City *</label>
-                        <input type="text" id="city" name="city"
-                               placeholder="Enter your city" required>
-                    </div>
+                </form>
 
-                </fieldset>
+            </section>
 
-                <!-- Fieldset 2: Academic and Professional Details -->
-                <fieldset>
-                    <legend>Academic &amp; Professional Details</legend>
-
-                    <!-- Qualification -->
-                    <div class="form-group">
-                        <label for="qualification">Highest Qualification *</label>
-                        <select id="qualification" name="qualification" required>
-                            <option value="">-- Select Qualification --</option>
-                            <option value="hsc">HSC (12th Pass)</option>
-                            <option value="diploma">Diploma</option>
-                            <option value="graduate">Graduate (B.E./B.Tech/B.Sc./BCA/B.Com/BA)</option>
-                            <option value="postgraduate">Post Graduate (M.Tech/MCA/MBA/M.Sc.)</option>
-                            <option value="phd">Ph.D.</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <!-- Skills -->
-                    <div class="form-group">
-                        <label for="skills">Skills *</label>
-                        <textarea id="skills" name="skills"
-                                  placeholder="E.g., HTML, CSS, Python, MS Office, Communication..."
-                                  required></textarea>
-                    </div>
-
-                    <!-- Preferred Job Role -->
-                    <div class="form-group">
-                        <label for="jobrole">Preferred Job Role *</label>
-                        <select id="jobrole" name="jobrole" required>
-                            <option value="">-- Select Preferred Role --</option>
-                            <option value="software_developer">Software Developer</option>
-                            <option value="web_designer">Web Designer</option>
-                            <option value="data_analyst">Data Analyst</option>
-                            <option value="network_engineer">Network Engineer</option>
-                            <option value="hr_executive">HR Executive</option>
-                            <option value="accountant">Accountant</option>
-                            <option value="marketing_executive">Marketing Executive</option>
-                            <option value="teacher">Teacher / Lecturer</option>
-                            <option value="mechanical_engineer">Mechanical Engineer</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <!-- Experience -->
-                    <div class="form-group">
-                        <label for="experience">Work Experience</label>
-                        <select id="experience" name="experience">
-                            <option value="fresher">Fresher (No Experience)</option>
-                            <option value="less1">Less than 1 Year</option>
-                            <option value="1to2">1 - 2 Years</option>
-                            <option value="2to4">2 - 4 Years</option>
-                            <option value="4to6">4 - 6 Years</option>
-                            <option value="above6">More than 6 Years</option>
-                        </select>
-                    </div>
-
-                </fieldset>
-
-                <!-- Fieldset 3: Resume and Career Interest -->
-                <fieldset>
-                    <legend>Resume &amp; Career Interest</legend>
-
-                    <!-- Resume Upload -->
-                    <div class="form-group">
-                        <label for="resume">Upload Resume (PDF only) *</label>
-                        <input type="file" id="resume" name="resume"
-                               accept=".pdf" required>
-                    </div>
-
-                    <!-- Career Interest -->
-                    <div class="form-group">
-                        <label>Career Interest (Select all that apply)</label>
-                        <br>
-                        <input type="checkbox" id="it" name="career_interest" value="it">
-                        <label for="it" class="checkbox-label">Information Technology</label>
-                        <br>
-                        <input type="checkbox" id="finance" name="career_interest" value="finance">
-                        <label for="finance" class="checkbox-label">Finance &amp; Banking</label>
-                        <br>
-                        <input type="checkbox" id="education" name="career_interest" value="education">
-                        <label for="education" class="checkbox-label">Education &amp; Teaching</label>
-                        <br>
-                        <input type="checkbox" id="healthcare" name="career_interest" value="healthcare">
-                        <label for="healthcare" class="checkbox-label">Healthcare &amp; Medical</label>
-                        <br>
-                        <input type="checkbox" id="engineering" name="career_interest" value="engineering">
-                        <label for="engineering" class="checkbox-label">Engineering &amp; Manufacturing</label>
-                        <br>
-                        <input type="checkbox" id="marketing" name="career_interest" value="marketing">
-                        <label for="marketing" class="checkbox-label">Sales &amp; Marketing</label>
-                    </div>
-
-                    <!-- Message / Cover Note -->
-                    <div class="form-group">
-                        <label for="message">Message / Cover Note</label>
-                        <textarea id="message" name="message"
-                                  placeholder="Write a short note about yourself or your career goals..."></textarea>
-                    </div>
-
-                    <!-- Terms and Conditions -->
-                    <div class="form-group">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms" class="checkbox-label">
-                            I agree to the <strong>Terms &amp; Conditions</strong> and
-                            <strong>Privacy Policy</strong> of CareerPath. *
-                        </label>
-                    </div>
-
-                </fieldset>
-
-                <!-- Form Buttons -->
-                <div class="form-buttons">
-                    <input type="submit" value="Submit Registration">
-                    <input type="reset" value="Reset Form">
-                </div>
-
-            </form>
-        </section>
-
+        </div>
     </main>
 
     <!-- ========== Footer ========== -->
-    <footer>
-        <p>&copy; 2024 CareerPath - Career Guidance Portal. All Rights Reserved.</p>
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="jobs.html">Job Listings</a> |
-            <a href="resources.html">Career Resources</a> |
-            <a href="register.html">Register</a>
-        </p>
-        <p>Contact us: info@careerpath.com | Phone: +91-9876543210</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p><strong>CareerPath</strong> &mdash; Career Guidance Portal</p>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="jobs.html">Job Listings</a>
+                        <a href="resources.html">Career Resources</a>
+                        <a href="register.html">Register</a>
+                    </div>
+                    <p>&copy; 2024 CareerPath. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- jQuery (required by Bootstrap 3) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 JS CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>
