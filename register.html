@@ -53,10 +53,13 @@
                 <h2>Student Registration</h2>
                 <p>Fields marked with <strong>*</strong> are required.</p>
 
-                <form action="#" method="post" id="reg-form">
+                <form action="#" method="post" id="reg-form" novalidate>
 
                     <fieldset>
                         <legend>Registration Form</legend>
+
+                        <!-- Alert message box for JS validation -->
+                        <div id="form-message" class="alert" style="display:none; margin-bottom:15px;"></div>
 
                         <!-- Row 1: Full Name + Email -->
                         <div class="row">
@@ -112,9 +115,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="jobrole">Preferred Job Role</label>
+                                    <label class="control-label" for="jobrole">Preferred Job Role *</label>
                                     <input type="text" class="form-control" id="jobrole" name="jobrole"
-                                        placeholder="e.g. Software Developer">
+                                        placeholder="e.g. Software Developer" required>
                                 </div>
                             </div>
                         </div>
@@ -123,8 +126,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="resume">Upload Resume</label>
-                                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                                    <label class="control-label" for="resume">Upload Resume *</label>
+                                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +173,7 @@
                         <a href="resources.html">Career Resources</a>
                         <a href="register.html">Register</a>
                     </div>
-                    <p>&copy; 2024 CareerPath. All Rights Reserved.</p>
+                    <p>&copy; <span id="current-year">2024</span> CareerPath. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -180,6 +183,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap 3 JS CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

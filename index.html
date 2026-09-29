@@ -51,6 +51,9 @@
     <main>
         <div class="container">
 
+            <!-- Welcome Message Banner -->
+            <div id="welcome-message" class="alert alert-info" style="display:none; margin-top:15px; margin-bottom:15px;"></div>
+
             <!-- Hero Section -->
             <section class="bs-section" id="hero-section">
                 <div class="row">
@@ -83,6 +86,7 @@
             <!-- Career Categories -->
             <section class="bs-section" id="categories">
                 <h2>Career Categories</h2>
+                <div id="category-message" class="alert alert-info" style="display:none; margin-top:12px;"></div>
 
                 <div class="row" style="margin-top:12px;">
 
@@ -134,7 +138,7 @@
                         <a href="resources.html">Career Resources</a>
                         <a href="register.html">Register</a>
                     </div>
-                    <p>&copy; 2024 CareerPath. All Rights Reserved.</p>
+                    <p>&copy; <span id="current-year">2024</span> CareerPath. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -144,6 +148,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap 3 JS CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 

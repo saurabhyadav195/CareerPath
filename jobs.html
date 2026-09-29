@@ -53,9 +53,19 @@
                 <h2>Job Listings</h2>
                 <p>Available job openings. <a href="register.html">Register</a> to apply.</p>
 
+                <!-- Search Box -->
+                <div class="row" style="margin-top:15px; margin-bottom:15px;">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="form-group">
+                            <label for="job-search">Search Jobs:</label>
+                            <input type="text" id="job-search" class="form-control" placeholder="Search by title, company, or location...">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Bootstrap 3 Responsive Table -->
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover jobs-table-bs">
+                    <table class="table table-striped table-bordered table-hover jobs-table-bs" id="job-table">
                         <caption>Job Openings - 2024</caption>
                         <thead>
                             <tr>
@@ -129,7 +139,7 @@
                         <a href="resources.html">Career Resources</a>
                         <a href="register.html">Register</a>
                     </div>
-                    <p>&copy; 2024 CareerPath. All Rights Reserved.</p>
+                    <p>&copy; <span id="current-year">2024</span> CareerPath. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -139,6 +149,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap 3 JS CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>
