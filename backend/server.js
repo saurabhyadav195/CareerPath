@@ -12,7 +12,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend build if present
+// Serve static frontend builds if present
+app.use(express.static(path.join(__dirname, '../angular-frontend/dist/angular-frontend')));
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Mount routes

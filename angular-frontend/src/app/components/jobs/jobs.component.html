@@ -1,0 +1,130 @@
+<div class="container">
+
+  <!-- Job Listings Section -->
+  <section class="bs-section" id="job-listings">
+    <h2>Job Listings</h2>
+    <p>Jobs are fetched live from the <strong>Node.js + Express + MySQL</strong> backend API.</p>
+
+    <!-- Success / Error Alerts -->
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage"   class="alert alert-danger">{{ errorMessage }}</div>
+
+    <!-- Search Bar — demonstrates [(ngModel)] two-way binding & (input) event binding -->
+    <div class="row" style="margin:15px 0;">
+      <div class="col-xs-12 col-sm-8 col-md-6">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by title, company, or location..."
+            [(ngModel)]="searchTerm"
+            (input)="applyFilter()">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" (click)="applyFilter()">Search</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading state — demonstrates *ngIf -->
+    <div *ngIf="loading" class="alert alert-info">Loading job listings from database...</div>
+
+    <!-- Jobs Table — demonstrates *ngFor + *ngIf -->
+    <div *ngIf="!loading && filteredJobs.length > 0" class="table-responsive">
+      <table class="table table-bordered table-striped table-hover jobs-table-bs">
+        <caption>Available Opportunities ({{ filteredJobs.length }} records)</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Qualification</th>
+            <th>Salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of filteredJobs">
+            <td>{{ job.id }}</td>
+            <td><strong>{{ job.title }}</strong></td>
+            <td>{{ job.company }}</td>
+            <td>{{ job.location }}</td>
+            <td>{{ job.qualification }}</td>
+            <td>{{ job.salary }}</td>
+            <td>
+              <button class="btn btn-xs btn-warning" (click)="editJob(job)" style="margin-right:4px;">Edit</button>
+              <button class="btn btn-xs btn-danger"  (click)="deleteJob(job.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- No results -->
+    <div *ngIf="!loading && filteredJobs.length === 0 && !errorMessage" class="alert alert-warning">
+      No job listings found.
+    </div>
+  </section>
+
+  <!-- Add / Edit Job Form Section -->
+  <section class="bs-section" id="job-form">
+    <h2>{{ isEditing ? 'Edit Job' : 'Add New Job' }}</h2>
+
+    <form (ngSubmit)="onSubmit()" #jobForm="ngForm">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="form-group">
+            <label for="jTitle">Job Title *</label>
+            <input type="text" id="jTitle" name="title" class="form-control"
+                   [(ngModel)]="jobFormData.title" required>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="form-group">
+            <label for="jCompany">Company *</label>
+            <input type="text" id="jCompany" name="company" class="form-control"
+                   [(ngModel)]="jobFormData.company" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="form-group">
+            <label for="jLocation">Location *</label>
+            <input type="text" id="jLocation" name="location" class="form-control"
+                   [(ngModel)]="jobFormData.location" required>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="form-group">
+            <label for="jQual">Qualification *</label>
+            <input type="text" id="jQual" name="qualification" class="form-control"
+                   [(ngModel)]="jobFormData.qualification" required>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="form-group">
+            <label for="jSalary">Salary *</label>
+            <input type="text" id="jSalary" name="salary" class="form-control"
+                   placeholder="e.g. Rs. 35,000 - 50,000"
+                   [(ngModel)]="jobFormData.salary" required>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <button type="submit" class="btn btn-primary">
+          {{ isEditing ? 'Update Job' : 'Add Job' }}
+        </button>
+        <button *ngIf="isEditing" type="button" class="btn btn-default" (click)="resetForm()" style="margin-left:8px;">
+          Cancel
+        </button>
+      </div>
+
+    </form>
+  </section>
+
+</div>

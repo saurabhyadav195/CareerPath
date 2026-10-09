@@ -1,0 +1,109 @@
+<div class="container">
+  <section class="bs-section" id="registration">
+    <h2>Student Registration</h2>
+    <p>Register to receive personalized job alerts and placement updates.</p>
+
+    <!-- Success Message (*ngIf) -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      <strong>&#10003; Success!</strong> {{ successMessage }}
+      <div style="margin-top:10px;">
+        <button class="btn btn-primary btn-sm" (click)="successMessage = ''">Register Another</button>
+      </div>
+    </div>
+
+    <!-- Error Message (*ngIf) -->
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <!-- Registration Form — *ngIf hides after success -->
+    <form *ngIf="!successMessage"
+          (ngSubmit)="onSubmit(regForm)" #regForm="ngForm" novalidate>
+      <fieldset>
+        <legend>Personal &amp; Academic Details</legend>
+
+        <div class="row">
+          <!-- Full Name -->
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group" [class.has-error]="nameCtrl.invalid && (nameCtrl.touched || submitted)">
+              <label for="regName">Full Name *</label>
+              <input type="text" id="regName" name="fullName" class="form-control"
+                     [(ngModel)]="formData.fullName" #nameCtrl="ngModel" required minlength="3">
+              <span *ngIf="nameCtrl.invalid && (nameCtrl.touched || submitted)" class="help-block">
+                Full name is required (min. 3 characters).
+              </span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group" [class.has-error]="emailCtrl.invalid && (emailCtrl.touched || submitted)">
+              <label for="regEmail">Email Address *</label>
+              <input type="email" id="regEmail" name="email" class="form-control"
+                     [(ngModel)]="formData.email" #emailCtrl="ngModel" required email>
+              <span *ngIf="emailCtrl.invalid && (emailCtrl.touched || submitted)" class="help-block">
+                A valid email address is required.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Phone -->
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group" [class.has-error]="phoneCtrl.invalid && (phoneCtrl.touched || submitted)">
+              <label for="regPhone">Phone Number *</label>
+              <input type="tel" id="regPhone" name="phone" class="form-control"
+                     placeholder="10-digit mobile number"
+                     [(ngModel)]="formData.phone" #phoneCtrl="ngModel"
+                     required pattern="^[0-9]{10}$">
+              <span *ngIf="phoneCtrl.invalid && (phoneCtrl.touched || submitted)" class="help-block">
+                Enter a valid 10-digit phone number.
+              </span>
+            </div>
+          </div>
+
+          <!-- Qualification -->
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group" [class.has-error]="qualCtrl.invalid && (qualCtrl.touched || submitted)">
+              <label for="regQual">Highest Qualification *</label>
+              <select id="regQual" name="qualification" class="form-control"
+                      [(ngModel)]="formData.qualification" #qualCtrl="ngModel" required>
+                <option value="">-- Select --</option>
+                <option>B.E. / B.Tech (CS/IT)</option>
+                <option>B.E. / B.Tech (Other)</option>
+                <option>BCA / MCA</option>
+                <option>B.Sc / M.Sc (IT)</option>
+                <option>Diploma / Graduate</option>
+              </select>
+              <span *ngIf="qualCtrl.invalid && (qualCtrl.touched || submitted)" class="help-block">
+                Please select your qualification.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preferred Job Role -->
+        <div class="form-group" [class.has-error]="roleCtrl.invalid && (roleCtrl.touched || submitted)">
+          <label for="regRole">Preferred Job Role *</label>
+          <input type="text" id="regRole" name="jobRole" class="form-control"
+                 placeholder="e.g. Software Developer, Data Analyst"
+                 [(ngModel)]="formData.jobRole" #roleCtrl="ngModel" required>
+          <span *ngIf="roleCtrl.invalid && (roleCtrl.touched || submitted)" class="help-block">
+            Preferred job role is required.
+          </span>
+        </div>
+
+        <!-- Buttons -->
+        <div style="margin-top:15px;">
+          <!-- (click) event binding for submit, [disabled] property binding for loading -->
+          <button type="submit" class="btn btn-primary" [disabled]="loading">
+            {{ loading ? 'Submitting...' : 'Register Now' }}
+          </button>
+          <button type="button" class="btn btn-default" (click)="regForm.resetForm()" style="margin-left:8px;">
+            Reset
+          </button>
+        </div>
+
+      </fieldset>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,70 @@
+<div class="container">
+
+  <!-- Gallery Section -->
+  <section class="bs-section" id="gallery">
+    <h2>Career Guidance Gallery</h2>
+    <!-- *ngFor: render gallery images -->
+    <div class="row" style="margin-top:12px;">
+      <div *ngFor="let item of galleryItems" class="col-xs-12 col-sm-6 col-md-3">
+        <div class="gallery-item">
+          <!-- [src] and [alt]: property binding -->
+          <img [src]="item.img" [alt]="item.title" class="img-responsive">
+          <p><strong>{{ item.title }}</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Resources Section -->
+  <section class="bs-section" id="api-resources">
+    <h2>Learning &amp; Prep Resources</h2>
+    <p>Fetched from <code>GET /api/resources</code> (Express backend).</p>
+    <!-- *ngIf: loading state -->
+    <div *ngIf="loadingApi" class="alert alert-info">Loading resources...</div>
+    <!-- *ngIf + *ngFor: show list once loaded -->
+    <ul *ngIf="!loadingApi && apiResources.length > 0" class="list-group" style="margin-top:12px;">
+      <li *ngFor="let res of apiResources" class="list-group-item">
+        <span><strong>{{ res.title }}</strong></span>
+        <span class="label label-primary pull-right">{{ res.type }}</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Video Section -->
+  <section class="bs-section" id="videos">
+    <h2>Video Resources</h2>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="media-item">
+          <h3>🎬 Interview Tips</h3>
+          <video controls style="width:100%; margin-top:8px;">
+            <source src="assets/video/interview-tips.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="media-item">
+          <h3>🎬 Resume Writing Guide</h3>
+          <video controls style="width:100%; margin-top:8px;">
+            <source src="assets/video/resume-guide.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio Section -->
+  <section class="bs-section" id="audio">
+    <h2>Motivation Audio</h2>
+    <div class="media-item">
+      <h3>🎧 Career Motivation</h3>
+      <audio controls style="width:100%; max-width:480px; margin-top:8px;">
+        <source src="assets/audio/motivation.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </section>
+
+</div>

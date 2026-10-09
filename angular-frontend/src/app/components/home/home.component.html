@@ -1,0 +1,64 @@
+<div class="container">
+
+  <!-- Welcome Alert -->
+  <div class="alert alert-info" style="margin-top:15px; margin-bottom:15px;">
+    <strong>Welcome to CareerPath!</strong>
+    Explore career categories, browse live job listings from MySQL, and access career guidance resources.
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bs-section" id="hero-section" style="background-color:#003399; color:#fff; padding:0; border:none;">
+    <div class="row" style="margin:0;">
+      <div class="col-xs-12 col-sm-5" style="padding:0;">
+        <img src="assets/images/banner.jpg" alt="Career Guidance Banner"
+             style="width:100%; min-height:200px; object-fit:cover; display:block;">
+      </div>
+      <div class="col-xs-12 col-sm-7">
+        <div class="hero-text-bs">
+          <h2>Find Your Dream Career</h2>
+          <p>Discover engineering &amp; technology job opportunities, sharpen your skills, and prepare for placements.</p>
+          <div class="hero-btn-group">
+            <a routerLink="/jobs" class="btn btn-danger">Browse Jobs</a>
+            <a routerLink="/register" class="btn btn-default">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="bs-section" id="about">
+    <h2>About CareerPath</h2>
+    <p>
+      CareerPath is a career guidance portal designed for engineering and technology students.
+      It provides access to verified job listings, interview preparation resources, and placement support.
+    </p>
+  </section>
+
+  <!-- Career Categories — demonstrates *ngFor, *ngIf, (click), [class.active-panel] -->
+  <section class="bs-section" id="categories">
+    <h2>Career Categories</h2>
+    <p>Click a category card to learn more about that career path.</p>
+
+    <!-- *ngIf: show selected info -->
+    <div *ngIf="selectedCategory" class="alert alert-success" style="margin-top:12px;">
+      <strong>{{ selectedCategory.title }}:</strong> {{ selectedCategory.description }}
+    </div>
+
+    <!-- *ngFor: render cards -->
+    <div class="row" style="margin-top:15px;">
+      <div *ngFor="let cat of categories" class="col-xs-12 col-sm-4">
+        <div class="panel panel-default category-panel"
+             [class.active-panel]="selectedCategory?.id === cat.id"
+             (click)="selectCategory(cat)">
+          <div class="panel-body" style="text-align:center;">
+            <div class="category-icon">{{ cat.icon }}</div>
+            <h3>{{ cat.title }}</h3>
+            <p>{{ cat.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
